@@ -19,7 +19,24 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const element = <h1>Aula de JSX</h1>;
+
+        class Player{
+            constructor (name,life) {
+                this.name = name;
+                this.life = life;
+            }
+
+            getDamage(damage){
+                return this.life - damage;
+            }
+        }
+
+        var player = new Player("Zezinho",20);
+
+        const element = <div>
+            <p>Nome: {player.name} </p>
+            <p> Life: {player.getDamage(5)}</p>
+            </div>
 
         ReactDOM.render(element,document.getElementById("root"));
 
