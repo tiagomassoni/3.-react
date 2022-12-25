@@ -19,25 +19,19 @@
     <div id="root"></div>
 
     <script type="text/babel">
-
-        class Player{
-            constructor (name,life) {
-                this.name = name;
-                this.life = life;
-            }
-
-            getDamage(damage){
-                return this.life - damage;
+        function boasVindas(usuario){
+            if (usuario){
+                return <h1>Seja Bem vindo: {usuario.nome}</h1>;
+            } else{
+                return <h1> Faça Login </h1>;
             }
         }
 
-        var player = new Player("Zezinho",20);
+        var usuario;
+        const element = boasVindas(usuario);
 
-        const element = <div>
-            <p>Nome: {player.name} </p>
-            <p> Life: {player.getDamage(5)}</p>
-            </div>
-
+        
+        
         ReactDOM.render(element,document.getElementById("root"));
 
     </script>
